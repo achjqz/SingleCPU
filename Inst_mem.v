@@ -22,6 +22,6 @@ module Inst_mem(
 	assign ram[5'h10] = 32'h00631826; //xor   R3 , R3 , R3
 	assign ram[5'h11] = 32'hAC610001; //sw R1 , 1(R3)
 	assign ram[5'h12] = 32'h90650001; //lw R5 , 1(R3)
-	 assign inst = ram[address[6:2]];
+	assign inst = ram[address[6:2]];
 
 endmodule
