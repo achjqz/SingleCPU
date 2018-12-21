@@ -12,7 +12,7 @@ module RegFile(Ra, Rb, D, Wr, We, Clk, Clrn, Qa, Qb);
 	 
 	 //Write data
 	 integer i;
-	 always @ ( posedge Clk or negedge Clrn) begin
+	 always @ (posedge Clk or negedge Clrn) begin
 		if (Clrn == 0) begin				
 			for (i=1 ; i <=31 ; i = i+1) Register[i] <= 0;
 		end else  if (( We ) && ( Wr != 0)) 	

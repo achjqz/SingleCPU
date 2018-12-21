@@ -1,10 +1,9 @@
-module Main(Clk, Clrn, inst, pc, aluout, memout);
-
+module Main(Clk, Clrn, inst, addr, aluout, memout);
 	input Clk, Clrn;
-	output [31:0] inst, pc, aluout, memout;
+	output [31:0] inst, addr, aluout, memout;
 	wire [31:0] data;
 	wire        wmem;	
-	CPU cpu (Clk , Clrn , inst , memout , pc , wmem , aluout ,data);
-    Inst_mem imem(pc , inst);
-	Data_mem dmem(Clk , memout , data , aluout , wmem );
+	INSTMEM imem(addr, inst);
+	CPU cpu (Clk, Clrn, inst, memout, addr, wmem, aluout, data);
+	DATAMEM dmem(Clk, memout, data, aluout, wmem);
 endmodule
