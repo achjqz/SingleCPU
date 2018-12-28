@@ -1,4 +1,4 @@
-module SHIFTER_32(X,Sa,Arith,Right,Sh);
+module SHIFTER_32(X,Sa, Right, Arith, Sh);
     input[31:0]X;
     input[4:0]Sa;
     input Arith,Right;
